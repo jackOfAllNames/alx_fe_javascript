@@ -47,7 +47,7 @@ h1 {
 
 /* ====== Quote container ====== */
 #quoteDisplay {
-  max-width: 48rem;
+  /* max-width: 48rem; */
   /* min-height: 7rem; */
   background: var(--card-bg);
   /* padding: 1.5rem 2rem; */

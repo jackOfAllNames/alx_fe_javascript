@@ -348,5 +348,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const addQuote = function () {
-  console.log(1);
+  const userCategory = document.getElementById("newQuoteText");
+  const userText = document.getElementById("newQuoteCategory");
+
+  quoteDisplay.replaceChildren(
+    makeSpan("category", `[${userCategory.value}]`),
+    makeSpan("quote-text", ` : ${userText.value}`)
+  );
+
+  const newQuote = {
+    text: userText,
+    category: userCategory,
+  };
+  quoteDisplay.classList.add("show");
+
+  userCategory.value = "";
+  userText.value = "";
+  quotes.append(newQuote);
 };
