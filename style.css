@@ -61,6 +61,14 @@ h1 {
   font-style: italic;
   transition: opacity var(--trans);
   opacity: 0; /* fade in after JS injects text */
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+#quoteDisplay .quote-text {
+  font-style: italic;
+  color: var(--fg);
 }
 
 #quoteDisplay.show {
@@ -98,6 +106,10 @@ button#newQuote:active {
   #quoteDisplay {
     font-size: 1.1rem;
     padding: 1.25rem 1.5rem;
+  }
+
+  #quoteDisplay .quote-text {
+    display: inline;
   }
 
   button#newQuote {
