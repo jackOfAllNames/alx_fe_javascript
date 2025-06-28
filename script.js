@@ -1,7 +1,9 @@
 "use strict";
 
-const quoteDisplay = document.getElementById("quoteDisplay");
 const newQuoteBtn = document.getElementById("newQuote");
+const quoteDisplay = document.getElementById("quoteDisplay");
+const userText = document.getElementById("newQuoteCategory");
+const userCategory = document.getElementById("newQuoteText");
 
 const quotes = [
   {
@@ -348,21 +350,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const addQuote = function () {
-  const userCategory = document.getElementById("newQuoteText");
-  const userText = document.getElementById("newQuoteCategory");
-
   quoteDisplay.replaceChildren(
     makeSpan("category", `[${userCategory.value}]`),
     makeSpan("quote-text", ` : ${userText.value}`)
   );
 
   const newQuote = {
-    text: userText,
-    category: userCategory,
+    text: userText.value,
+    category: userCategory.value,
   };
   quoteDisplay.classList.add("show");
 
   userCategory.value = "";
   userText.value = "";
-  quotes.append(newQuote);
+  quotes.push(newQuote);
 };
