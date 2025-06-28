@@ -10,13 +10,13 @@
 :root {
   --bg: #f3f5f9;
   --fg: #222;
-  --accent: #2563eb; /* indigo‑500 */
-  --accent-dark: #1d4ed8; /* indigo‑600 */
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
   --card-bg: #ffffff;
   --radius: 0.75rem;
   --shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
   --trans: 200ms ease;
-  font-size: 16px; /* scale from here if needed */
+  font-size: 16px;
 }
 
 html,
@@ -99,6 +99,36 @@ button#newQuote:hover {
 button#newQuote:active {
   transform: translateY(0);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
+}
+
+/* ====== Add Quote form ====== */
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 28rem;
+  margin-top: 1.5rem;
+}
+
+.quote-form input[type="text"] {
+  padding: 0.65rem 0.9rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  background: #fff;
+  transition: border-color var(--trans), box-shadow var(--trans);
+}
+
+.quote-form input[type="text"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  outline: none;
+}
+
+.quote-form button {
+  width: fit-content;
+  /* align-self: flex-start; */
 }
 
 /* ====== Responsiveness ====== */

@@ -10,13 +10,15 @@
     <h1>Dynamic Quote Generator</h1>
     <div id="quoteDisplay"></div>
     <button id="newQuote">Show New Quote</button>
+    <div class="quote-form">
+      <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+      <input
+        id="newQuoteCategory"
+        type="text"
+        placeholder="Enter quote category"
+      />
+      <button id="newQuote" onclick="addQuote()">Add Quote</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
-
-<!-- <div id="quoteDisplay">
-  <span class="category" id="quoteCategory">[Motivation]</span>
-  <span class="quote-text" id="quoteText"
-    > : The only way to do great work is to love what you do.</span
-  >
-</div> -->

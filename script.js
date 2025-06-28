@@ -346,3 +346,7 @@ const createAddQuoteForm = function () {};
 document.addEventListener("DOMContentLoaded", () => {
   newQuoteBtn.addEventListener("click", showRandomQuote);
 });
+
+const addQuote = function () {
+  console.log(1);
+};
