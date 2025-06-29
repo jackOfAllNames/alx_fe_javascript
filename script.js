@@ -328,12 +328,16 @@ const quotes = [
 const makeSpan = function (cls, text) {
   const spanEl = document.createElement("span");
   spanEl.classList.add(cls);
-  spanEl.textContent = text;
+  spanEl.innerHTML = text;
   return spanEl;
 };
 
 const showRandomQuote = function () {
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  return quotes[Math.floor(Math.random() * quotes.length)];
+};
+
+const displayRandomQuote = function () {
+  const randomQuote = showRandomQuote();
 
   quoteDisplay.replaceChildren(
     makeSpan("category", `[${randomQuote.category}]`),
@@ -346,14 +350,14 @@ const showRandomQuote = function () {
 const createAddQuoteForm = function () {};
 
 document.addEventListener("DOMContentLoaded", () => {
-  newQuoteBtn.addEventListener("click", showRandomQuote);
+  newQuoteBtn.addEventListener("click", displayRandomQuote);
 });
 
 const addQuote = function () {
-  quoteDisplay.replaceChildren(
-    makeSpan("category", `[${userCategory.value}]`),
-    makeSpan("quote-text", ` : ${userText.value}`)
-  );
+  quoteDisplay.replaceChildren();
+
+  quoteDisplay.appendChild(makeSpan("category", `[${userCategory.value}]`));
+  quoteDisplay.appendChild(makeSpan("quote-text", ` : ${userText.value}`));
 
   const newQuote = {
     text: userText.value,
